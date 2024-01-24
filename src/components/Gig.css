@@ -8,3 +8,14 @@
 .band-image{
     max-width: 800px;
 }
+
+button {
+    font-size: 2.5em;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+button.heart-filled {
+    color: red;
+}
