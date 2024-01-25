@@ -14,7 +14,9 @@ import HeartButton from "./components/HeartButton";
 // USING PROPS
 const App = () => {
 
-  const [heartState, setHeartState] = useState(false);
+  // Need to refactor this useState back into Gig component as it sets state for all 
+  // favourite buttons rendered on the page rather than individually  
+  // const [heartState, setHeartState] = useState(false);
 
   return (
     <>
@@ -28,7 +30,8 @@ const App = () => {
           dateTime="July 21 - 4:30 PM"
           location="Tottenham Stadium"
         />
-        <HeartButton heartState={heartState} setHeartState={setHeartState}/>
+        {/* To be removed */}
+        {/* <HeartButton heartState={heartState} setHeartState={setHeartState}/> */}
       </div>
       <div>
         <Gig
@@ -41,7 +44,8 @@ const App = () => {
           dateTime="August 15 - 7:00 PM"
           location="Enigma Park Amphitheater"
         />
-        <HeartButton heartState={heartState} setHeartState={setHeartState}/>
+        {/* To be removed */}
+        {/* <HeartButton heartState={heartState} setHeartState={setHeartState}/> */}
       </div>
     </>
   );

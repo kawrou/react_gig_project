@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Gig.css";
+import HeartButton from "./HeartButton";
 
 // const Gig = () => {
 //     return (
@@ -20,7 +21,7 @@ import "./Gig.css";
 const Gig = (props) => {
 
     // Refactoring following code to seperate into own components
-    // const [heartState, setHeartState] = useState(false);
+    const [heartState, setHeartState] = useState(false);
 
     // const toggleHeart = () => {
     //     setHeartState(!heartState);
@@ -42,6 +43,9 @@ const Gig = (props) => {
         >
             ♡
         </button> */}
+
+        {/* Above code to be refactored into the below component */}
+        <HeartButton heartState={heartState} setHeartState={setHeartState}/>
         </div>
     );
 };
