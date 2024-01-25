@@ -12,6 +12,9 @@ import Gig from "./components/Gig";
 
 // USING PROPS
 const App = () => {
+
+  const [heartState, setHeartState] = useState(false);
+
   return (
     <>
       <Gig

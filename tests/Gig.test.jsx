@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import userEvent from "@testing-library/user-event";
+// import userEvent from "@testing-library/user-event";
 import Gig from "./src/components/Gig"; 
 
 describe("Can render Gig component correctly", () => {
@@ -24,30 +24,35 @@ describe("Can render Gig component correctly", () => {
         />)
         expect(screen.getByAltText("Red Hot Chili Peppers band photo")).toBeInTheDocument(); 
     })
-    test("Renders favourite button element correctly", () => {
-        render(<Gig/>);
-        expect(screen.getByRole("button")).toBeInTheDocument(); 
-    });
+
+    // Move favourite button to own test as favourite button refactored to own component
+
+    // test("Renders favourite button element correctly", () => {
+    //     render(<Gig/>);
+    //     expect(screen.getByRole("button")).toBeInTheDocument(); 
+    // });
 }); 
 
-describe("Tests for favourite button", () => {
-    test("Heart icon renders filled when user clicks on it", async () => {
-        render(<Gig />)
+// Move favourite button to own test as favourite button refactored to own component
 
-        expect(screen.getByRole("button")).not.toHaveClass('heart-filled'); 
+// describe("Tests for favourite button", () => {
+//     test("Heart icon renders filled when user clicks on it", async () => {
+//         render(<Gig />)
+
+//         expect(screen.getByRole("button")).not.toHaveClass('heart-filled'); 
     
-        await userEvent.click(screen.getByRole("button")); 
+//         await userEvent.click(screen.getByRole("button")); 
 
-        expect(screen.getByRole("button")).toHaveClass('heart-filled'); 
-    });
-    test("Heart icon renders as empty heart when user clicks on it", async () => {
-        render(<Gig />)
+//         expect(screen.getByRole("button")).toHaveClass('heart-filled'); 
+//     });
+//     test("Heart icon renders as empty heart when user clicks on it", async () => {
+//         render(<Gig />)
 
-        await userEvent.click(screen.getByRole("button"))
-        expect(screen.getByRole("button")).toHaveClass('heart-filled');
+//         await userEvent.click(screen.getByRole("button"))
+//         expect(screen.getByRole("button")).toHaveClass('heart-filled');
 
-        await userEvent.click(screen.getByRole("button"))
-        expect(screen.getByRole("button")).not.toHaveClass('heart-filled')
+//         await userEvent.click(screen.getByRole("button"))
+//         expect(screen.getByRole("button")).not.toHaveClass('heart-filled')
 
-    })
-})
+//     })
+// })
