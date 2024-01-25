@@ -24,35 +24,4 @@ describe("Can render Gig component correctly", () => {
         />)
         expect(screen.getByAltText("Red Hot Chili Peppers band photo")).toBeInTheDocument(); 
     })
-
-    // Move favourite button to own test as favourite button refactored to own component
-
-    // test("Renders favourite button element correctly", () => {
-    //     render(<Gig/>);
-    //     expect(screen.getByRole("button")).toBeInTheDocument(); 
-    // });
 }); 
-
-// Move favourite button to own test as favourite button refactored to own component
-
-// describe("Tests for favourite button", () => {
-//     test("Heart icon renders filled when user clicks on it", async () => {
-//         render(<Gig />)
-
-//         expect(screen.getByRole("button")).not.toHaveClass('heart-filled'); 
-    
-//         await userEvent.click(screen.getByRole("button")); 
-
-//         expect(screen.getByRole("button")).toHaveClass('heart-filled'); 
-//     });
-//     test("Heart icon renders as empty heart when user clicks on it", async () => {
-//         render(<Gig />)
-
-//         await userEvent.click(screen.getByRole("button"))
-//         expect(screen.getByRole("button")).toHaveClass('heart-filled');
-
-//         await userEvent.click(screen.getByRole("button"))
-//         expect(screen.getByRole("button")).not.toHaveClass('heart-filled')
-
-//     })
-// })

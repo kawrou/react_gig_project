@@ -11,6 +11,7 @@ const gigData = [
         "One of only two UK shows, you don't want to miss this rare chance to see the Chili Peppers IRL.",
         dateTime: "July 21 - 4:30 PM",
         location: "Tottenham Stadium",
+        favourite: false
     },
     {
         id: 2,
@@ -23,6 +24,7 @@ const gigData = [
         "Join us for an immersive journey into their iconic soundscapes and thought-provoking lyrics at the mesmerizing open-air venue.",
         dateTime: "August 15 - 7:00 PM",
         location: "Enigma Park Amphitheater",
+        favourite: false
     },
     ];
 

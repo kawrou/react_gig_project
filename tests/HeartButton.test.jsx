@@ -15,6 +15,7 @@ describe("Tests for favourite button", () => {
     test("Heart icon renders filled when user clicks on it", async () => {
         
         // Need to mock the props as it is getting it from other components 
+
         render(<HeartButton />)
 
         expect(screen.getByRole("button")).not.toHaveClass('heart-filled'); 
