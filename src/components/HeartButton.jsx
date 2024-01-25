@@ -1,22 +1,32 @@
 import React, { useState } from "react";
 import "./Gig.css";
 
-const HeartButton = (props) => {
-    console.log(`Props in HeartButton: ${props.heartState}`)
+const HeartButton = ({ id, favourite, setGigList, gigList }) => {
+  //   console.log(`Props in HeartButton: ${favourite}`);
 
-    const toggleHeart = () => {
-        props.setHeartState(!props.heartState);
-    };
+  const toggleHeart = () => {
+    let sortedGigList = gigList.map((gig) => {
+      if (gig.id === id) {
+        return { ...gig, favourite: !favourite };
+      }
+      return gig;
+    })
+      .slice().sort((a, b) => {
+        return a.favourite === b.favourite ? 0 : a.favourite ? -1 : 1;
+      });
+    // console.log(sortedGigList);
+    setGigList(sortedGigList);
+  };
 
-    return (
-        <button
-            className={props.heartState ? "heart-filled" : ""}
-            aria-label="favourite button"
-            onClick={toggleHeart}
-        >
-            ♡
-        </button>
-    )
-}
+  return (
+    <button
+      className={favourite ? "heart-filled" : ""}
+      aria-label="favourite button"
+      onClick={toggleHeart}
+    >
+      ♡
+    </button>
+  );
+};
 
 export default HeartButton;

@@ -2,21 +2,34 @@ import React, { useState } from "react";
 import "./Gig.css";
 import HeartButton from "./HeartButton";
 // USING PROPS
-const Gig = (props) => {
-
-    
-    const [heartState, setHeartState] = useState(false);
-    
-    return (
-        <div className="gig-info">
-        <h3 className="band-name">{props.bandName}</h3>
-        <img src={props.imageUrl} alt={props.altText} className="band-image" />
-        <p className="event-description">{props.eventDescription}</p>
-        <p className="event-date-time">{props.dateTime}</p>
-        <p className="event-location">{props.location}</p>
-        <HeartButton heartState={heartState} setHeartState={setHeartState}/>
-        </div>
-    );
+const Gig = ({
+  id,
+  bandName,
+  imageUrl,
+  altText,
+  eventDescription,
+  dateTime,
+  location,
+  favourite,
+  gigList,
+  setGigList,
+}) => {
+//   console.log(favourite);
+  return (
+    <div className="gig-info">
+      <h3 className="band-name">{bandName}</h3>
+      <img src={imageUrl} alt={altText} className="band-image" />
+      <p className="event-description">{eventDescription}</p>
+      <p className="event-date-time">{dateTime}</p>
+      <p className="event-location">{location}</p>
+      <HeartButton
+        id={id}
+        favourite={favourite}
+        gigList={gigList}
+        setGigList={setGigList}
+      />
+    </div>
+  );
 };
 
 export default Gig;
